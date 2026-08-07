@@ -1,18 +1,35 @@
-# Level 5 ADV Mission 1 Readme
+# Turners Car Insurance AI
 
-Replace me with an introduction to the project.
+## Project Overview
+
+This project is a prototype AI-powered vehicle recognition system developed for Turners Car Insurance.
+
+The application allows users to upload an image of a vehicle. The image is analysed using Microsoft Azure AI Vision to identify vehicle-related information such as vehicle type, possible brands, and colour.
+
+The goal of this solution is to improve the vehicle insurance buying experience by automatically identifying vehicle information before insurance pricing is calculated.
+
+## Features
+
+- Upload a vehicle image through a web interface
+- Analyse images using Azure AI Vision
+- Identify vehicle types
+- Detect possible vehicle brands
+- Detect vehicle colours
+- Display AI analysis results
+
+## Technology Used
+
+- Python
+- Flask
+- Microsoft Azure AI Vision
+- HTML
+- CSS
+- Git/GitHub
 
 ## Installation
 
-Replace me with the package manager you are using.
-
-Explaining how to install the project.
+Clone the repository:
 
 ```bash
-npm install
-npm start
+git clone <repository-url>
 ```
-
-## More Details
-
-Replace me with more details about the project.

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Turners Vehicle Recognition AI</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Turners Car Insurance AI</h1>
+
+      <p>Upload a vehicle image to identify the vehicle type.</p>
+
+      <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required />
+
+        <button type="submit">Analyse Vehicle</button>
+      </form>
+
+      {% if result %}
+      <div class="result">
+        <h2>Detected Information:</h2>
+
+        <h3>Vehicle Type:</h3>
+        <p>{{ result.type }}</p>
+
+        <h3>Possible Brands:</h3>
+        <p>
+          {% if result.brands %} {{ result.brands|join(", ") }} {% else %} Not
+          detected {% endif %}
+        </p>
+
+        <h3>Colour:</h3>
+        <p>{{ result.colour }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
