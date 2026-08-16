@@ -1,0 +1,30 @@
+{
+  "name": "l5-adv-2026-jul-l5-adv-mission-2-bu-missionreadyhq",
+  "version": "1.0.0",
+  "description": "Replace me with an introduction to the project.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mission-Ready/l5-adv-2026-jul-l5-adv-mission-2-bu-missionreadyhq.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mission-Ready/l5-adv-2026-jul-l5-adv-mission-2-bu-missionreadyhq/issues"
+  },
+  "homepage": "https://github.com/Mission-Ready/l5-adv-2026-jul-l5-adv-mission-2-bu-missionreadyhq#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "supertest": "^7.2.2"
+  }
+}
