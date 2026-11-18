@@ -128,3 +128,12 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Python environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Uploaded test images
+app/uploads/*

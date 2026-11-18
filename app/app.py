@@ -9,7 +9,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = "uploads"
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), "uploads")
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 endpoint = os.getenv("AZURE_ENDPOINT")
@@ -20,7 +20,7 @@ client = ImageAnalysisClient(
     credential=AzureKeyCredential(key)
 )
 
-
+# THOW THIS UPLOAD FUNCTION
 @app.route("/", methods=["GET", "POST"])
 def index():
     result = None
@@ -38,6 +38,8 @@ def index():
         with open(image_path, "rb") as f:
             image_data = f.read()
 
+# SHOW THIS AI CONNECTION 
+# SHOW THIS WHERE THE RESULT IS HANDLED
         analysis = client.analyze(
             image_data=image_data,
             visual_features=[
