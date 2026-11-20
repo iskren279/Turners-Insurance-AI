@@ -1,5 +1,12 @@
+
 flask
 python-dotenv
 requests
 azure-ai-vision-imageanalysis
 gunicorn
+ultralytics
+Pillow
+torch
+torchvision
+timm
+huggingface-hub

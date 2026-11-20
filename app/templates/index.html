@@ -1,38 +1,81 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Turners Vehicle Recognition AI</title>
-    <link rel="stylesheet" href="/static/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
   </head>
 
   <body>
     <div class="container">
       <h1>Turners Car Insurance AI</h1>
 
-      <p>Upload a vehicle image to identify the vehicle type.</p>
+      <p>Upload a vehicle photograph to analyse its details.</p>
 
       <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="image" accept="image/*" required />
+        <input
+          type="file"
+          name="image"
+          accept=".jpg,.jpeg,.jfif,.png"
+          required
+        />
 
         <button type="submit">Analyse Vehicle</button>
       </form>
 
-      {% if result %}
+      {% if error %}
       <div class="result">
-        <h2>Detected Information:</h2>
+        <h2>Analysis Error</h2>
+        <p>{{ error }}</p>
+      </div>
+      {% endif %} {% if result %}
 
-        <h3>Vehicle Type:</h3>
+      <div class="result">
+        <h2>Vehicle Analysis Results</h2>
+
+        <h3>Vehicle Type</h3>
         <p>{{ result.type }}</p>
 
-        <h3>Possible Brands:</h3>
-        <p>
-          {% if result.brands %} {{ result.brands|join(", ") }} {% else %} Not
-          detected {% endif %}
-        </p>
+        <h3>Manufacturer</h3>
+        <p>{{ result.make }}</p>
 
-        <h3>Colour:</h3>
+        <h3>Vehicle Model</h3>
+        <p>{{ result.model }}</p>
+
+        <h3>Year</h3>
+        <p>{{ result.year }}</p>
+
+        <h3>Prediction Confidence</h3>
+        <p>{{ result.confidence }}%</p>
+
+        <h3>Top Three Predictions</h3>
+
+        {% if result.top_predictions %}
+        <ul>
+          {% for prediction in result.top_predictions %}
+          <li>{{ prediction.label }} – {{ prediction.confidence }}%</li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p>No additional predictions available.</p>
+        {% endif %}
+
+        <h3>Estimated Image Colour</h3>
         <p>{{ result.colour }}</p>
+
+        <p>
+          <small>
+            AI predictions are estimates and may not correctly identify the
+            vehicle. Verify vehicle details independently.
+          </small>
+        </p>
       </div>
+
       {% endif %}
     </div>
   </body>

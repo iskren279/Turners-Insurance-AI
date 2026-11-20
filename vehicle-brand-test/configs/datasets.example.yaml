@@ -1,0 +1,20 @@
+# Copy this file to configs/datasets.local.yaml and edit paths locally.
+# Do NOT commit configs/datasets.local.yaml.
+#
+# Paths under root_dir are relative to root_dir. Only the labelled training
+# devkit files are used by scripts/prepare_data.py; cars_test_annos.mat has no
+# class labels and is not used as training data.
+
+stanford_cars:
+  root_dir: "/path/to/stanford-cars"
+  devkit_dir: "car_devkit/devkit"
+  train_images_dir: "cars_train/cars_train"
+  test_images_dir: "cars_test/cars_test"
+  meta_file: "car_devkit/devkit/cars_meta.mat"
+  train_annotation_file: "car_devkit/devkit/cars_train_annos.mat"
+  test_annotation_file: "car_devkit/devkit/cars_test_annos.mat"
+
+compcars:
+  root_dir: "/path/to/compcars"
+  surveillance_dir: "/path/to/compcars/surveillance"
+  metadata_dir: "/path/to/compcars/metadata"

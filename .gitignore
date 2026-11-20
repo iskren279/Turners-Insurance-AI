@@ -137,3 +137,27 @@ __pycache__/
 
 # Uploaded test images
 app/uploads/*
+
+# AI model weights
+*.pt
+*.pth
+*.onnx
+*.safetensors
+
+# Python and AI model caches
+.cache/
+
+# Exclude unnecessary TwinCar project material
+vehicle-brand-test/.github/
+vehicle-brand-test/app/
+vehicle-brand-test/docs/
+vehicle-brand-test/notebooks/
+vehicle-brand-test/scripts/
+vehicle-brand-test/slides/
+vehicle-brand-test/splits/
+vehicle-brand-test/tests/
+vehicle-brand-test/TEAM_PLAYBOOK.md
+
+# Python cache files
+__pycache__/
+*.py[cod]

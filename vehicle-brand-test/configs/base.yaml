@@ -1,0 +1,28 @@
+project:
+  name: twincar
+  seed: 42
+
+data:
+  dataset: stanford_cars
+  image_size: 224
+  batch_size: 32
+  num_workers: 4
+
+training:
+  epochs: 25
+  lr: 0.0003
+  weight_decay: 0.05
+
+model:
+  backbone: convnextv2_base
+  pretrained: true
+  heads:
+    fine: true
+    make: true
+    model: true
+    year: true
+
+logging:
+  use_wandb: true
+  wandb_project: twincar
+  wandb_entity: hzlatevskii-brainster-data-science-academy

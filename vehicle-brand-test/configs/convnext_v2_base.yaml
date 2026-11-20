@@ -1,0 +1,13 @@
+defaults:
+  - base
+
+model:
+  backbone: convnextv2_base
+  pretrained: true
+
+data:
+  image_size: 224
+
+training:
+  epochs: 25
+  lr: 0.0003
